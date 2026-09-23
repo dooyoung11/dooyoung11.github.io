@@ -1,4 +1,11 @@
+---
 permalink: /
+title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
 
 I am a Ph.D. student in the Department of Environmental Science, Policy, and Management at the University of California, Berkeley.
 
