@@ -4,4 +4,4 @@ My research focuses on insect systematics, historical biogeography, phylogenetic
 
 I study how biodiversity has evolved through time and across geographic regions, integrating specimen-based taxonomy, phylogenomics, and biogeographic approaches.
 
-I am currently working on the systematics, biogeography, and evolution of the Rhytisternus series of Pterostichini.
+I am currently working on the systematics, biogeography, and evolution of the *Rhytisternus* series of Pterostichini.
