@@ -9,21 +9,28 @@ author_profile: true
   <div class="wordwrap">You can also find my articles on <a href="{{https://scholar.google.com/citations?user=UzLcPu0AAAAJ&hl=ko}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
-2026
-Kim D, Sundukov YN. (2026). An updated checklist of the subgenus Badistrinus, with a redescription of Pterostichus laticollis (Carabidae: Pterostichini). Zootaxa, 5881(1): 95–110.
-Kim D, Seo JW, Hwang UW. (2026). Integrative taxonomy and biogeographical history of the subgenus Abea, with synonymy of Micronialoe (Coleoptera: Carabidae: Pterostichus). Journal of Zoological Systematics and Evolutionary Research, 2026: 1–28.
-Kim D, Hwang UW. (2026). Unraveling systematics, evolution, and biogeography of the ground beetle subgenus Nialoe Tanaka sensu lato (Coleoptera: Carabidae: Pterostichus) in East Asia. Insect Systematics and Diversity, 10(1): 1–18.
-2025
-Kim D, Yu H, Hwang UW. (2025). Preliminary checklist of ground beetles from Jindo Island, South Korea (Coleoptera: Carabidae). Animal Systematics, Evolution and Diversity, 41(4): 388–398.
-Kim D, Kim D, Kim D, Kim YK, Suh SJ, Choi KS. (2025). Faunistic study of Coleoptera (Buprestidae, Carabidae, Cerambycidae, Lucanidae and Melyridae) on Gageodo Island, south-westernmost Korean Peninsula. Biodiversity Data Journal, 13: e146229.
-Choi YG, Kim D, Kim G, Shin CR, Park B, Choi EH, Hwang UW. (2025). The complete mitochondrial genome of a ground beetle, Chlaenius naeviger (Carabidae: Harpalinae: Chlaeniini), from South Korea. Mitochondrial DNA Part B, 10(3): 224–228.
-2024
-Yu H, Shin CR, Kim G, Kim D, Choi YG, Lee JS, Ahn NH, Bae C, Park B, Choi EH, Hwang UW. (2024). Re-evaluation of extinction risk of four Korean land snails (Mollusca, Gastropoda) based on intensive field survey and genetic diversity of COI or 16S rRNA. The Korean Journal of Malacology, 40(4): 143–155.
-Kim D, Choi EY, Kim D, Kim YK, Suh SJ. (2024). Taxonomic notes on the Korean intertidal ground beetle species of the genus Bembidion (Coleoptera: Carabidae). Journal of Asia-Pacific Biodiversity, 17(3): 464–470.
-Kim D, Suh SJ. (2024). Review of the ground beetle subgenus Micronialoe from Korea, with a description of a new species (Coleoptera: Carabidae: Pterostichus). Zootaxa, 5471(4): 451–464.
-Kim D, Kim G, Shin CR, Park B, Choi EH, Hwang UW. (2024). The complete mitochondrial genome of a ground beetle Synuchus nitidus (Carabidae: Harpalinae: Sphodrini) from South Korea. Mitochondrial DNA Part B, 9(6): 711–715.
-2023
-Won MH, Choi JW, Bang W, Lee D, Moon MK, Kim YK, Kim D, Kim D, Suh SJ, Choi KS. (2023). Insect fauna including unrecorded species in Ulleungdo, South Korea. Biodiversity Data Journal, 11: e100783.
-2022
-Choi JW, Won MH, Lee DY, Bang WJ, Moon MK, Kim YK, Kim D, Kim D, Suh SJ, Choi KS. (2022). Insect fauna of Seonginbong in Ulleungdo, Korea. Journal of Asia-Pacific Biodiversity, 15(4): 518–526.
-Kim D, Suh SJ. (2022). Taxonomic and faunistic notes on the genus Trichotichnus from Korea (Coleoptera, Carabidae, Harpalinae, Harpalini). Biodiversity Data Journal, 10: e83804.
+{% include base_path %}
+
+<!-- New style rendering if publication categories are defined -->
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
+
+~
